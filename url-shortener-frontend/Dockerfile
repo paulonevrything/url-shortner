@@ -8,4 +8,7 @@ RUN npm install
 
 COPY . . 
 
-CMD [ "npm", "start" ]
+EXPOSE 8080
+
+# start app
+CMD ["npm", "run", "serve"]
