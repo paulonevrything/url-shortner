@@ -3,9 +3,9 @@
         <div class="shorten-url-form">
             <div>
                 <div class="form-group">
-                    <label for="url-shortner">Shorten URL</label>
-                    <input class="form-control" placeholder="Enter long url" id="url-shortner" required
-                        name="url-shortner" v-model="request.longUrl" />
+                    <label for="url-shortener">Shorten URL</label>
+                    <input class="form-control" placeholder="Enter long url" id="url-shortener" required
+                        name="url-shortener" v-model="request.longUrl" />
                 </div><br>
                 <button v-bind:disabled="request.longUrl.length < 1" v-if="!loading" @click="shortenUrl"
                     class="btn btn-secondary">Shorten Now</button>
