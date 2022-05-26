@@ -1,11 +1,11 @@
-import {Entity, model, property} from '@loopback/repository';
+import { Entity, model, property } from '@loopback/repository';
 
 @model()
 export class Url extends Entity {
   @property({
     type: 'number',
     id: true,
-    generated: false,
+    generated: true,
   })
   id?: number;
 
@@ -17,6 +17,7 @@ export class Url extends Entity {
 
   @property({
     type: 'string',
+    index: { unique: true }
   })
   shortUrl?: string;
 
