@@ -1,0 +1,28 @@
+version: '3.8'
+services: 
+  mongodb:
+    image: mongo:5.0.2
+    ports:
+      - 27017:27017
+
+  backend:
+    depends_on:
+      - mongodb
+    build:
+      context: ./url-shortener-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:81"
+    environment:
+      - MONGO_URL=mongodb://db:27017/url-shortener
+  
+  frontend:
+    build:
+      context: ./url-shortener-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:  
+      - BACKEND_URL=http://localhost:3000/urls
+volumes:
+  db:
