@@ -2,7 +2,7 @@ import http from "../http-common";
 class UrlShortnerService {
 
     shortenUrl(data: any) {
-        return http.post("/url-shortener", data);
+        return http.post("/", data);
     }
 
 }
