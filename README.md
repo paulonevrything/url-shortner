@@ -34,13 +34,20 @@ Likely improvements that can be done on the project include:
 
 ## Installation information
 
+Clone the project
+```
+git clone https://github.com/paulonevrything/url-shortner
+```
+CD into project root
+```
+cd url-shortner
+```
+
 ### Docker
-Create docker image from Dockerfile
+From the project root, run the following:
 ```
-docker build -t exchangerate:1 .
+docker-compose build
+docker-compose up
 ```
-Run the container from the image
-```
-docker run -p 8080:8080 exchangerate:1 
-```
-Launch the API documentation on swagger on [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+Launch the API documentation on swagger on [http://localhost:3000/explorer/](http://localhost:3000/explorer/)
+Launch the Web Interface on [http://localhost:8080/](http://localhost:8080)
