@@ -12,7 +12,7 @@ services:
       context: ./url-shortener-backend
       dockerfile: Dockerfile
     ports:
-      - "3000:81"
+      - 3000:3000
     environment:
       - MONGO_URL=mongodb://db:27017/url-shortener
   
@@ -21,7 +21,7 @@ services:
       context: ./url-shortener-frontend
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - 8080:8080
     environment:  
       - BACKEND_URL=http://localhost:3000/urls
 volumes:

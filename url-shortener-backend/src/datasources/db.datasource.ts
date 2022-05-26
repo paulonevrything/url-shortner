@@ -9,8 +9,7 @@ const config = {
   port: 27017,
   user: '',
   password: '',
-  database: 'url-shortener',
-  useNewUrlParser: true
+  database: 'url-shortener'
 };
 
 // Observe application's life cycle to disconnect the datasource when
