@@ -5,7 +5,7 @@ const config = {
   name: 'db',
   connector: 'mongodb',
   url: '',
-  host: 'localhost',
+  host: 'mongo-db',
   port: 27017,
   user: '',
   password: '',
