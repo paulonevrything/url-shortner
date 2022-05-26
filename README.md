@@ -33,24 +33,22 @@ Likely improvements that can be done on the project include:
 -   Securing the endpoints using JWT/OAuth/Basic Auth
 
 ## Installation information
-### Maven
-Build project to standalone application
+
+Clone the project
 ```
-mvn clean package
+git clone https://github.com/paulonevrything/url-shortner
 ```
-Run standalone application
+CD into project root
 ```
-java -jar target/exchange_rate_service-0.0.1-SNAPSHOT.jar
+cd url-shortner
 ```
-Launch the API documentation on swagger on [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ### Docker
-Create docker image from Dockerfile
+From the project root, run the following:
 ```
-docker build -t exchangerate:1 .
+docker-compose build
+docker-compose up
 ```
-Run the container from the image
-```
-docker run -p 8080:8080 exchangerate:1 
-```
-Launch the API documentation on swagger on [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+Launch the API documentation on swagger on [http://localhost:3000/explorer/](http://localhost:3000/explorer/)
+
+Launch the Web Interface on [http://localhost:8080/](http://localhost:8080)
