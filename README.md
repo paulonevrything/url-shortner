@@ -33,16 +33,6 @@ Likely improvements that can be done on the project include:
 -   Securing the endpoints using JWT/OAuth/Basic Auth
 
 ## Installation information
-### Maven
-Build project to standalone application
-```
-mvn clean package
-```
-Run standalone application
-```
-java -jar target/exchange_rate_service-0.0.1-SNAPSHOT.jar
-```
-Launch the API documentation on swagger on [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ### Docker
 Create docker image from Dockerfile
