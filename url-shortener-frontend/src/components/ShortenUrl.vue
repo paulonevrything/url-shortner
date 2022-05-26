@@ -17,6 +17,7 @@
         <div v-if="result" class="result card w-75">
             <div class="card-header">
                 Result
+                <font-awesome-icon @click="copyToClipboard" icon="fa-solid fa-paste" />
             </div>
             <div class="card-body">
                 <p class="card-text">{{ shortUrl }}</p>
@@ -39,7 +40,6 @@ export default class ShortenUrl extends Vue {
         longUrl: "",
     };
 
-    public submitted = false;
     public loading = false;
     public result = false;
     public shortUrl!: string;
@@ -54,14 +54,33 @@ export default class ShortenUrl extends Vue {
         UrlShortnerService.shortenUrl(data)
             .then((response) => {
                 this.loading = false;
-                // this.tutorial.id = response.data.id;
-                console.log(response.data);
-                this.submitted = true;
+                this.result = true;
+                this.shortUrl = `http://localhost:3000/urls/${response.data.shortUrl}`;
+                console.log('response: ', response.data);
             })
             .catch((e) => {
                 this.loading = false;
-                console.log(e);
+                console.log('error: ', e.response.data.error.message);
+                this.makeToast(e.response.data.error.message);
             });
+    }
+
+    copyToClipboard() {
+        
+        this.$copyText(this.shortUrl).then(e => {
+            this.makeToast('Copied!');
+            console.log(e)
+        }, function (e) {
+            alert('Can not copy')
+            console.log(e)
+        })
+    }
+
+    makeToast(message: string) {
+        this.$bvToast.toast(message, {
+            title: 'Alert',
+            autoHideDelay: 5000,
+        })
     }
 }
 
