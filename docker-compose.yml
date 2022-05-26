@@ -4,6 +4,7 @@ services:
     image: mongo:5.0.2
     ports:
       - 27017:27017
+    container_name: mongo-db
 
   backend:
     depends_on:
@@ -13,6 +14,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    container_name: api
     environment:
       - MONGO_URL=mongodb://db:27017/url-shortener
   
@@ -22,6 +24,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8080
+    container_name: ui
     environment:  
       - BACKEND_URL=http://localhost:3000/urls
 volumes:
